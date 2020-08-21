@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% extends "frontpage/base.html" %}
+<!-- custom template tags -->
+{% load my_extras %}
+{% block content %}
+{% load static %}
+<title>PRPRealEstate</title>
+  <style>
+  #divider{
+    border-color: white;
+    border-radius: 1px;
+  }
+  #about-jumbo{
+    background-image: url({% static "rprealestate/images/seattle-seven.jpg" %});
+    opacity: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  #name{
+    color: white;
+  }
+  #main-intro{
+    color: white;
+  }
+  </style>
+
+
+  <div id='about-jumbo' class="jumbotron">
+    <div class="container">
+
+      <h1 id='name' class="display-4">Ruslan Polyak</h1>
+      <p id="main-intro">Experienced realtor in the Pacific Northwest!</p>
+      <hr id='divider' class="my-4">
+      <p id='main-intro'>I would love to learn about you to see how I can help you in the Northwest real estate market!</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id='about' class="col-sm-8">
+      <h2>About:</h2>
+      <p>Hi, I am Ruslan. I am a real estate broker with North Pacific Properties.</p>
+      <p> North Pacific Properties is a privately owned real estate firm awarded 29th of the most successful companies in Puget Sound.
+          North Pacific Properties is a full service real estate brokerage company located in Seattle, Washington. Our central mission
+          is to provide our clients with expert and well-rounded real estate service throughout the Seattle and surrounding King County,
+          Kitsap County, and Snohomish County areas while meeting the individual needs of our clients, one client at a time.
+      </p>
+      <p>
+         I grew up in Seattle and I love all the Pacific Northwest has to offer. Some of my favorite neighborhoods include Queen Anne,
+         Capitol Hill, Ballard, Sand Point, Shoreline, and Edmonds. I hold a B.A. in Economics from UW and a Masters of Science in Finance
+         from Seattle University. My goal is to make real estate as enjoyable and stress free as possible through my experience in real estate
+         and my knowledge in finance.
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div id='about' class="col-sm-8">
+      <p>
+        In addition to real estate, I also enjoy developing Web Applications in JavaScript and Python. I created this website as a fun side project
+        using Django 3.0.3 and Bootstrap V4.5. I will continue to improve and add features to this website over time so if there is something else you would like to see, please let me know.
+      </p>
+    </div>
+  </div>
+
+
+
+{% endblock %}

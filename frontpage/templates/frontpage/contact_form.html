@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- custom template tags -->
+{% extends "frontpage/base.html" %}
+{% load my_extras %}
+{% load widget_tweaks %}
+{% block content %}
+{% load bootstrap4 %}
+
+    <title>Contact Form</title>
+    <div class="container">
+      <div class="jumbotron">
+        <h2 style="margin-top: 2rem">Contact Form</h2>
+        <p></p>
+          {%csrf_token%}
+          {% bootstrap_form form %}
+          <input type="submit" class="btn btn-primary btn-large" value="Submit">
+      </div>
+    </div>
+  </body>
+{% endblock %}
