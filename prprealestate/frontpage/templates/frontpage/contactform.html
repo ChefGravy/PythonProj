@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- custom template tags -->
+{% extends "frontpage/base.html" %}
+{% load my_extras %}
+{% load widget_tweaks %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+
+<style>
+  #contact-form{
+
+  }
+</style>
+
+<title>Contact Form</title>
+<div id='contact-form' class="col-sm-3">
+  <h2 style="margin-top: 2rem">Contact Form</h2>
+  <p>
+    <form method="post">
+      {%csrf_token%}
+      {{ form.name }}
+      {{ form.category }}
+      {{ form.email }}
+      {{ form.subject }}
+      {{ form.body }}
+      <input type="submit" class="btn btn-primary btn-large" value="Submit">
+  </form>
+</div>
+{% endblock %}

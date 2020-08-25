@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title>PRP Real Estate</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- my own css -->
+    <link rel="stylesheet" href="{% static "rprealestate/css/master.css" %}" crossorigin="anonymous">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Rubik:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+
+      #container-one {
+         background-color: #fffff;
+         font-family: 'Baloo Tamma 2', cursive;
+         text-align: center;
+         background-position: center center;
+         opacity: 1;
+         background-repeat: no-repeat;
+         width: 100%;
+      }
+
+      #footer-div {
+        width: 100%;
+      }
+
+      #home:hover {
+        color: #808080;
+      }
+      #contact-me {
+        text-decoration: underline;
+        text-decoration-style: double;
+      }
+      #contact:hover {
+        color: #808080;
+      }
+      #npp:hover {
+        color: #808080;
+      }
+      #index-jumbo{
+        background-image: url({% static "rprealestate/images/main-bg-0.jpg" %});
+        opacity: 1;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 1000px;
+      }
+      #name{
+        color: white;
+        font-weight: bolder;
+        font-family: 'Rubik', sans-serif;
+      }
+      #main-intro{
+        color: white;
+        font-family: 'Rubik', sans-serif;
+      }
+      #divider{
+        border-color: white;
+        border-radius: 1px;
+      }
+      #npp{
+        float: right;
+        text-align: right;
+        margin: 0;
+        margin-left: auto;
+      }
+      #dropdownMenuButton{
+        font-family: 'Rubik', sans-serif;
+      }
+      .dropdown{
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+       <!-- Optional JavaScript -->
+       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+       <!-- Google fonts -->
+       <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Rubik:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+       <!-- Bootstrap nav bar starts here -->
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <!-- Home button drop down -->
+         <div class="dropdown">
+           <h5 id="dropdownMenuButton" data-toggle="dropdown">Home</h5>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="{% url 'frontpage:contactform' %}">Contact Form</a>
+              <a class="dropdown-item" href="{% url "frontpage:data" %}">Data</a>
+              <a class="dropdown-item" href="{% url 'index' %}">Home</a>
+            </div>
+         </div>
+         <div id='npp' class='text-right'><a id='npp' class="navbar-brand" href="https://www.northpacificproperties.com/">North Pacific Properties</a></div>
+       </nav>
+       <div id='index-jumbo' class="jumbotron">
+        <div id ="index-container" class="container">
+            <h1 id='name' class="display-4">LET ME HELP YOU FIND<BR>YOUR PERFECT HOME</h1>
+            <p id='main-intro'>Whether you are looking to buy your dream home, or sell your existing one, <br>let me help you make it
+              an easy transaction with competitive rates!
+            <p id='main-intro'>Start today with a free consultation.</p>
+            <!-- <div id='call-button' class="container"> -->
+            <button id='free-consultation' class="btn btn-info"><b>GET FREE CONSULTATION</b></button>
+            <!-- </div> -->
+        </div>
+
+      </div>
+        {% block content %}
+
+        {% endblock %}
+      <br><br><br>
+      <hr class="4" style="width: 75%; text-align: center;">
+      <footer id='main-footer'>
+        <div id='footer-div' class="row">
+          <div id='container-one' class="col-sm-3" style="height: 200px; width: 100px; text-align: center center; margin: 50px 0 0 0; font-family: 'Baloo Tamma 2', cursive;">
+            North Pacific Properties
+            <br>
+              Seattle | 206.601.2325
+            <br>
+              2224 Queen Anne Ave N<p>Seattle, WA 98109
+            <br>
+            ruslan@northpacificproperties.com
+          </div>
+          <div id='container-two' class="col-sm-3" style="height: 200px; width: 100px; font-family: 'Baloo Tamma 2', cursive;">
+            <h5 style="text-decoration: double underline;">My Favorite Neighborhoods</h5>
+            <br><a href="https://visitseattle.org/neighborhoods/ballard/" style="color:black;">Ballard</a>
+            <br><a href="https://visitseattle.org/neighborhoods/fremont/" style="color:black;">Fremont</a>
+            <br><a href="https://visitseattle.org/neighborhoods/queen-anne/" style="color:black;">Queen Anne</a>
+            <br><a href="https://visitseattle.org/neighborhoods/capitol-hill/" style="color:black;">Capitol Hill</a>
+            <br><a href="https://visitseattle.org/neighborhoods/west-seattle/" style="color:black;">WestSeattle</a>
+            <p><a href="https://en.wikipedia.org/wiki/Greenwood,_Seattle" style="color:black">Greenwood</a>
+            <br>
+          </div>
+          <div id='container-three' class="col-sm-3" style="height: 200px; width: 100px; font-family: 'Baloo Tamma 2', cursive;">
+            <h5 style="text-decoration: double underline;">Contact Me</h5>
+            <p>I would love to learn about you to see<br> how I can help you in the Northwest<br> real estate market.
+            <p>
+            <a href="{% url "frontpage:contactform" %}" class="badge badge-info">Contact Form</a>
+          </div>
+          <div id='cotainer-four' class="col-sm-3" style="height: 200px; width: 200px; font-family: 'Baloo Tamma 2', cursive;">
+            <h5 style="text-decoration: double underline;">Quick Links</h5>
+            <p><a href="{% url "frontpage:data" %}" style="color: black;">Data</a>
+
+          </div>
+        </div>
+
+      </footer>
+
+  </body>
+</html>
