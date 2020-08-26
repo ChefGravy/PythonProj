@@ -160,8 +160,10 @@
       <div id='data' class="col-md-4" style="font-family: 'Rubik', sans-serif;">
         <h2>Charts</h2>
         <p>
-          Are you data driven? Data never lies and allows you to make smarter decisions. If you are curious about current trends, I refresh
-          the NWMLS reports on a monthly basis. If you have any questions or would like to see more, please head over to my <a id='c-link' color='blue' href="{% url 'frontpage:contactform' %}">contact form</a>, there you can submit your questions.
+          If you are curious about current trends, then you'll love these charts.
+          If you have any questions or would like to see more, please head over to my
+          <a id='c-link' color='blue' href="{% url 'frontpage:contactform' %}">contact form</a>,
+          there you can submit your request.
         </p>
           <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenterData">View details »</button>
@@ -170,7 +172,7 @@
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Data:</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Charts:</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -212,23 +214,42 @@
         </div>
       </div>
     </div>
+
     <div class="row">
-      <div class="col-sm-4" style="font-family: 'Rubik', sans-serif;">
+      <div class="col-sm-8" style="font-family: 'Rubik', sans-serif;">
         <h2>Data</h2>
         <p>
-          I update reports on a monthly basis. These are data tables that are state wide.
+          Are you data driven? Data never lies and allows<br> you to make smarter decisions.
         </p>
-        <!-- Button -->
-        <a class="btn btn-primary" href="{% url 'frontpage:data' %}">View details »</a>
+        <!-- Collapse -->
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        View details »
+        </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            These reports present an overview of the Real Estate market in WA. If you'd like to see previous months or data for a specific area, please send me a request via e-mail.
+            <hr style="border-top: dotted 2px;" />
+            <a href="{% static "rprealestate/pdf/recaps_2020_jul_Recaps.pdf" %}" style='color:black;'>NWMLS: July Residential + Condo recap by county</a>
+            <br>
+            <a href="{% static "rprealestate/pdf/reportssum_2020_jul_YTDSummary.pdf" %}" style='color:black;'>NWMLS: July YTD Summary</a>
+            <br>
+            <a href="{% static "rprealestate/pdf/reportssum_2020_jul_PriceUnits.pdf" %}"style='color:black;'>NWMLS: July Price Range and Bedrooms</a>
+            <br>
+            <a href="{% static "rprealestate/pdf/reportssum_2020_jul_summary.pdf" %}" style='color:black;'>NWMLS: July Summary Report</a>
+            <br>
 
+          </div>
+        </div>
       </div>
     </div>
+
     <p><br>
       <hr style="border-top: dotted 1px;" />
     <p>
     <div class="row">
       <div class="col-sm-8" style="font-family: 'Rubik', sans-serif;">
-        <h2>My Favorite Neighborhoods:</h2><p>
+        <h2>My Favorite Seattle Neighborhoods:</h2><p>
         Having been raised in Seattle since the early '90s, I've had a front row seat to this city's transformation into the tech giant that it is today.
         Currently Seattle is undergoing an extensive change spurred by the success of Amazon, which has now surpassed Microsoft as the richest publicly owned
         company in the world.<p>
@@ -260,15 +281,21 @@
         <br>
         Known as the area around 85th Street and Greenwood Avenue is booming with coffeehouses, antique stores, bars, and eateries. One of my favorite restaurants to visit is
         Flintcreek Cattle and is located on corner of 85th and Greenwood Ave N. Once a year, Greenwood hosts the Greenwood Car Show that happens every June and the Seafair Parade in August.
-        If you love classic cars, the Car Show is definitely the event for you. Right after the Car Show you can head over to Chucks' Hop Shop, proudly deemed "The Land of a Thousand Beers". It also
+        If you love classic cars, the Car Show is definitely the event for you and right after the Car Show you can head over to any number of breweries right around the corner. It also
         features a rotating schedule of daily food trucks - making it the perfect spot for a quick bite and a beer! And if you have a sweet tooth, don't forget the homemade truffles at Chocolati
         Cafe.
         <p>
-        Capitol Hill:<br>
-
+        Capitol Hill: <a href="{% static "rprealestate/pdf/98122.pdf" %}"><span class="badge badge-pill badge-info">Capitol Hill Market</span></a>
+        <a href="{% static "rprealestate/pdf/98112.pdf" %}"><span class="badge badge-pill badge-info">North Capitol Hill Market</span></a><br>
+        Arguably one of Seattle's most popular nightlife and entertainment neighborhoods. Much like Queen Anne, Capitol Hill is situated on a steep hill that is east of the city's downtown central business district.
+        One thing I loved and miss about living on the Hill is that I was always super close to the freeway which reduced my commute times drastically. Capitol Hill's biggest street is Broadway and it's
+        absolutely packed with shops, apartment buildings, restaurants, bars, specialty stores, and much much more. If you are ever on Broadway, you have to stop by Dick's which is located right in the middle
+        of E Olive Way and E Denny Way. If you're a foodie, Dick's is arguably one of the best burgers you'll ever try. <br>Capitol Hill is also home to two of the city's best-known theatures, both of which
+        are part of the Landmark
+        </thead>
         <p>
-        WestSeattle: <a href="{% static "rprealestate/pdf/98119.pdf" %}"><span class="badge badge-pill badge-info">WestSeattle Market</span></a><br>
-
+        WestSeattle: <a href="{% static "rprealestate/pdf/98119.pdf" %}"><span class="badge badge-pill badge-info">WestSeattle Market</span></a>
+        <a href="{% static "rprealestate/pdf/98136.pdf" %}"><span class="badge badge-pill badge-info">WestSeattle Fauntleroy Market</span></a><br>
 
         <p>
         Last but not least:
@@ -277,11 +304,11 @@
 
 
       </div>
+      <!-- images go here -->
       <div class="col-sm-4">
-        <embed type="video/quicktime" src="https://www.greenwoodcarshow.com/" width="300" height="300">
-        <embed type="video/quicktime" src="https://flintcreekseattle.com/" width="300" height="300">
-        <embed type="video/quicktime" src="https://townandcountrymarkets.com/store-landings/ballard-market/" width="300" height="300">
-        <embed type="video/quicktime" src="https://www.biteofseattle.com/" width="300" height="300">
+
+
+
       </div>
     </div>
   </div>
