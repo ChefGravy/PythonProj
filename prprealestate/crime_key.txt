@@ -1,0 +1,15 @@
+API:
+
+KeyID
+d3ofk20ez1xr3pa8dblh9daay
+
+KeySecret
+2pect7awvlru96fec2ymh0bs8z3yejzwvxfx85bzandyt6z1ka
+
+
+APP:
+App Token
+SYsWI0eNhTBIHVtXiup6qo14t
+
+Secret Token:
+cDrpTeCxgQTvtkqjWUG3chVkFCxN1sXGLFmG

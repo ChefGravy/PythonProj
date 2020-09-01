@@ -34,3 +34,38 @@ document.getElementById('free-consultation').addEventListener('click', () => {
 //     });
 //   }
 // })();
+
+// const renderContactForm = () => {
+//   const markup =
+//   `
+//     <h2 style="margin-top: 2rem">Contact Form</h2>
+//     <p>
+//       <form method="post">
+//         {%csrf_token%}
+//         <div class="row">
+//         <div class="col-6">
+//           {{ form.name|as_crispy_field }}
+//         </div>
+//         <div class="col-6">
+//           {{ form.email|as_crispy_field }}
+//         </div>
+//         <div class="col-6">
+//           {{ form.subject|as_crispy_field }}
+//         </div>
+//         <div class="col-6">
+//           {{ form.category|as_crispy_field }}
+//         </div>
+//         <div class="col-12">
+//           {{ form.body|as_crispy_field }}
+//         </div>
+//       </div>
+//       <input type="submit" class="btn btn-primary btn-large" value="Submit">
+//     </form>
+//   `
+//   document.getElementById('contact-form').insertAdjacentHTML('beforeend', markup);
+// }
+//
+// document.getElementById('contact_form_nav').addEventListener('click', () => {
+//   document.getElementById('contact_form_nav').remove();
+//     renderContactForm();
+// });

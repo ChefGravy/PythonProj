@@ -6,6 +6,36 @@
 {% load static %}
 <title>PSRPRealEstate</title>
 
+  <style media="screen">
+    #main-intro{
+      font-weight: bold;
+    }
+  </style>
+
+  <div id='index-jumbo' class="jumbotron">
+    <div class="row">
+
+       <div id ='index-container' class="col-sm-4">
+         <span class='align-middle'>
+           <h1 id='main-intro' class="display-4">LET ME HELP YOU FIND<BR>YOUR PERFECT HOME</h1>
+           <p id='main-intro'>Whether you are looking to buy your dream home, or sell your existing one, <br>let me help you make it
+             an easy transaction with <span id='competitive-rates' style='text-decoration: underline;'>competitive rates!</span>
+           <p id='main-intro'>Start today with a free consultation.</p>
+           <!-- <div id='call-button' class="container"> -->
+           <button id='free-consultation' class="btn btn-info"><b>GET FREE CONSULTATION</b></button>
+           <!-- </div> -->
+          </span>
+       </div>
+
+       <div id='jumbo-two' class="col-sm-8"></div>
+
+   </div>
+   <div id='jumbo-row-two' class="row">
+     <div id='competitive-rates-js' class="col-sm-4"></div>
+     <div class="col-sm-8"></div>
+   </div>
+  </div>
+
 
   <div id='about_container-data' class="container">
     <div id='row-one' class="row">
@@ -41,7 +71,7 @@
                   </p>
                   <p>
                      I grew up in Seattle and I love all the Pacific Northwest has to offer. Some of my favorite neighborhoods include Queen Anne,
-                     Capitol Hill, Ballard, Sand Point, Shoreline, and Edmonds. I hold a B.A. in Economics from UW and a Masters of Science in Finance
+                     Capitol Hill, Ballard, Greenwood, Fremont, and West Seattle. I hold a B.A. in Economics from UW and a Masters of Science in Finance
                      from Seattle University. My goal is to make real estate as enjoyable and stress free as possible through my experience in real estate
                      and my knowledge in finance.
                   </p>
@@ -181,7 +211,7 @@
               <div class="modal-body">
                 <div class="container">
                   <h1 id='data-name' class="display-5">NWMLS YTD Charts:</h1>
-                  <p id='data-intro' class="lead">This data represents King County YTD! If you would like to see a different county or something more specific, please send me an e-mail request.</p>
+                  <p id='data-intro' class="lead">These charts represent King County YTD! If you would like to see a different county or something more specific, please send me an e-mail request.</p>
                   <p>
                 </div>
 
@@ -217,7 +247,7 @@
 
     <div class="row">
       <div class="col-sm-8" style="font-family: 'Rubik', sans-serif;">
-        <h2>Data</h2>
+        <h2>Market Reports</h2>
         <p>
           Are you data driven? Data never lies and allows<br> you to make smarter decisions.
         </p>
@@ -228,7 +258,7 @@
         </p>
         <div class="collapse" id="collapseExample">
           <div class="card card-body">
-            These reports present an overview of the Real Estate market in WA. If you'd like to see previous months or data for a specific area, please send me a request via e-mail.
+            These market reports present an overview of the Real Estate market in WA. If you'd like to see previous months or data for a specific area, please send me a request via e-mail.
             <hr style="border-top: dotted 2px;" />
             <a href="{% static "rprealestate/pdf/recaps_2020_jul_Recaps.pdf" %}" style='color:black;'>NWMLS: July Residential + Condo recap by county</a>
             <br>
@@ -250,56 +280,55 @@
     <div class="row">
       <div class="col-sm-8" style="font-family: 'Rubik', sans-serif;">
         <h2>My Favorite Seattle Neighborhoods:</h2><p>
-        Having been raised in Seattle since the early '90s, I've had a front row seat to this city's transformation into the tech giant that it is today.
-        Currently Seattle is undergoing an extensive change spurred by the success of Amazon, which has now surpassed Microsoft as the richest publicly owned
+        <!-- Having been raised in Seattle since the early '90s, I've had a front row seat to this city's transformation into the tech giant that it is today.
+        Currently, Seattle is undergoing an extensive change spurred by the success of Amazon, which has now surpassed Microsoft as the richest publicly owned
         company in the world.<p>
         As a result, Seattle is assuming its place among major vibrant, energetic metropolises like New York City and Los Angeles. With this growth, the city offers increased
-        amentities for attendees and highlights its best offerings.
+        amentities and highlights its best offerings for anyone local or just visiting. -->
         <p>
-        Ballard:<br>
-        Biscuit & Bean, Reuben's Brews, Gracia, Stone Gardens, Ballard Locks, Trailbend Taprooms, Ballard Market, are just a few names that I think about when someone says, "Let's go to Ballard".
-        I can spend an entire day roaming around Ballard and still not see everything. When I was a kid, my parents toook me to the Ballard Locks during the summer and I got to see the Pacific Salmon
-        pass through the Locks. If you were lucky, you got to see a seal on the hunt for some Salmon. On the weekends, my wife and I will wake up early...ish and make our way to the Ballard Market where
-        buy all our fresh ingredients for the week. If you're hungry and skipped breakfast, you can always grab a bite from any number of food vendors that are cooking that day.
+        Ballard: <a href="{% static "rprealestate/pdf/98107.pdf" %}"><span class="badge badge-pill badge-info">Ballard Market</span></a>
+        <!-- Biscuit & Bean, Reuben's Brews, Gracia, Stone Gardens, Ballard Locks, Trailbend Taprooms, Ballard Market, are just a few names that I think about when someone says, "Let's go to Ballard".
+        I can spend an entire day roaming around Ballard and still not see everything. When I was a kid, my parents took me to the Ballard Locks one summer and I got to see the Pacific Salmon
+        pass through the Locks. If you were lucky, you may get to see a seal or two on the hunt for some Salmon. On the weekends, my wife and I will wake up early...ish and make our way to the Ballard Market where
+        buy all our fresh ingredients for the week. If you're hungry and skipped breakfast, you can always grab a bite from any number of food vendors that are cooking that day. -->
         <p>
-        Fremont:<br>
-        I remember the first time I saw the Fremont Troll. I was just a kid when my dad slowly drove up 36th and all of a sudden, he said,
+        Fremont: <a href="{% static "rprealestate/pdf/98107.pdf" %}"><span class="badge badge-pill badge-info">Fremont Market</span></a>
+        <!-- I remember the first time I saw the Fremont Troll. I was just a kid when my dad slowly drove up 36th and all of a sudden, he said,
         "Hey, what's that?" pointing at the troll. I didn't know what to think, it was huge! Back then the VW wasn't filled with cement, the city only did that so nobody would get hurt while crawling inside. From
         that day on, any time someone said Fremont, I thought of that Troll. But as much as I love the Fremont Troll, there is far more to Fremont: Fremont Brewing Company, Schilling Cider House, Fainting Goat Gelato,
         Theo Chocolate, Jive Time Records, Portage Bay Goods, and Milstead & Co. I love Fremont even more because you're a hop, skip, and a jump from Gas Works Park which is absolutely amazing during the summer. and
-        if you love running or biking, the Burke-Gilman Trail, also known as the Burke, is right around the corner.
+        if you love running or biking, the Burke-Gilman Trail, also known as the Burke, is right around the corner. -->
         <p>
         Queen Anne: <a href="{% static "rprealestate/pdf/98119.pdf" %}"><span class="badge badge-pill badge-info">Queen Anne Market</span></a><br>
-        If there is one neighborhood in the Seattle that has changed more than any other, it's probably going to be Queen Anne. I know this because I went to middle school there: New Options Middle School, also knows as just N.O.M.S.
+        <!-- If there is one neighborhood in the Seattle that has changed more than any other, it's probably going to be Queen Anne. I know this because I went to middle school there: New Options Middle School, also knows as just N.O.M.S.
         This was back in the mid '90s and I'll never forget it. The school is no longer there but the building remains. You can read more about it <a href="https://www.historylink.org/File/10563">here</a>; it was actually
         built around 1862. I love Queen Anne because it sits on top of a hill and is super close to the Space Needle, Chihuly Garden and Glass, and Seattle Center. The reason this is important is because once a year
         during about the third week of the month of July, this happens, <a href="https://www.biteofseattle.com/">The Bite of Seattle</a> and it's at the Seattle Center. It is arguably one of my favorite events of the year
-        and I make every effort to go. I love the entertainment, the food, the beer, and all the attractions this event brings. If you've never been, I highly recommend it.
+        and I make every effort to go. I love the entertainment, the food, the beer, and all the attractions this event brings. If you've never been, I highly recommend it. -->
         <p>
         Greenwood: <a href="{% static "rprealestate/pdf/98103.pdf" %}"><span class="badge badge-pill badge-info">Greenlake/Greenwood Market</span></a>
         <a href="{% static "rprealestate/pdf/98117.pdf" %}"><span class="badge badge-pill badge-info">Greenwood/LoyalHeights Market</span></a>
-        <br>
+        <!-- <br>
         Known as the area around 85th Street and Greenwood Avenue is booming with coffeehouses, antique stores, bars, and eateries. One of my favorite restaurants to visit is
         Flintcreek Cattle and is located on corner of 85th and Greenwood Ave N. Once a year, Greenwood hosts the Greenwood Car Show that happens every June and the Seafair Parade in August.
         If you love classic cars, the Car Show is definitely the event for you and right after the Car Show you can head over to any number of breweries right around the corner. It also
         features a rotating schedule of daily food trucks - making it the perfect spot for a quick bite and a beer! And if you have a sweet tooth, don't forget the homemade truffles at Chocolati
-        Cafe.
+        Cafe. -->
         <p>
         Capitol Hill: <a href="{% static "rprealestate/pdf/98122.pdf" %}"><span class="badge badge-pill badge-info">Capitol Hill Market</span></a>
         <a href="{% static "rprealestate/pdf/98112.pdf" %}"><span class="badge badge-pill badge-info">North Capitol Hill Market</span></a><br>
-        Arguably one of Seattle's most popular nightlife and entertainment neighborhoods. Much like Queen Anne, Capitol Hill is situated on a steep hill that is east of the city's downtown central business district.
-        One thing I loved and miss about living on the Hill is that I was always super close to the freeway which reduced my commute times drastically. Capitol Hill's biggest street is Broadway and it's
+        <!-- Arguably one of Seattle's most popular nightlife and entertainment neighborhoods. Much like Queen Anne, Capitol Hill is situated on a steep hill that is east of the city's downtown central business district.
+        One thing I loved and miss about living on Capitol Hill is that I was always super close to the freeway which reduced my commute times drastically. Capitol Hill's biggest street is Broadway and it's
         absolutely packed with shops, apartment buildings, restaurants, bars, specialty stores, and much much more. If you are ever on Broadway, you have to stop by Dick's which is located right in the middle
         of E Olive Way and E Denny Way. If you're a foodie, Dick's is arguably one of the best burgers you'll ever try. <br>Capitol Hill is also home to two of the city's best-known theatures, both of which
-        are part of the Landmark
-        </thead>
+        are part of the Landmark -->
         <p>
         WestSeattle: <a href="{% static "rprealestate/pdf/98119.pdf" %}"><span class="badge badge-pill badge-info">WestSeattle Market</span></a>
         <a href="{% static "rprealestate/pdf/98136.pdf" %}"><span class="badge badge-pill badge-info">WestSeattle Fauntleroy Market</span></a><br>
 
         <p>
-        Last but not least:
-        This is by no means the entire list of neighborhoods in Seattle. These are the neighborhoods that I grew up around and visited frequently. If you're interested in learning more about the current
+        Last but not least! This is by no means the exhaustive list of all the wonderful neighborhoods Seattle has to offer. These are just the neighborhoods that I grew up in/around and/or frequently visited.
+        If you're interested in learning about other neighborhoods or would like to see Market Reports, please submit a request via my Contact Form or feel free to give me a call.
 
 
 

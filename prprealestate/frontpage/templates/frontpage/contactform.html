@@ -1,31 +1,62 @@
+
 <!DOCTYPE html>
 <!-- custom template tags -->
 {% extends "frontpage/base.html" %}
 {% load my_extras %}
 {% load widget_tweaks %}
+{% load static %}
 
-{% load bootstrap4 %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
 <style>
-  #contact-form{
-
+  #contact-form-one{
+    margin-left: 50px;
+    font-family: 'Rubik', sans-serif;
+    background-color: #ffffff;
   }
+  #contact-form-three{
+    margin: auto;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bolder;
+  }
+
 </style>
 
 <title>Contact Form</title>
-<div id='contact-form' class="col-sm-3">
-  <h2 style="margin-top: 2rem">Contact Form</h2>
-  <p>
-    <form method="post">
-      {%csrf_token%}
-      {{ form.name }}
-      {{ form.category }}
-      {{ form.email }}
-      {{ form.subject }}
-      {{ form.body }}
+
+<div class="row">
+  <div id='contact-form-one' class="col-sm-3">
+    <h2 style="margin-top: 2rem">Contact Form</h2>
+    <p>
+      <form method="post">
+        {%csrf_token%}
+        <div class="row">
+        <div class="col-6">
+          {{ form.name|as_crispy_field }}
+        </div>
+        <div class="col-6">
+          {{ form.email|as_crispy_field }}
+        </div>
+        <div class="col-6">
+          {{ form.subject|as_crispy_field }}
+        </div>
+        <div class="col-6">
+          {{ form.category|as_crispy_field }}
+        </div>
+        <div class="col-12">
+          {{ form.body|as_crispy_field }}
+        </div>
+      </div>
       <input type="submit" class="btn btn-primary btn-large" value="Submit">
-  </form>
+    </form>
+  </div>
+  <div id='contact-form-three' class="col-sm-8">
+    <span> Use this contact form to not only ask questions, but also provide feedback, and/or become a member.
+      If you do have a question, please use the Body section of the form to provide as much detail as you can and I will try to respond in a timely manner.
+      If you have any feedback for me regarding the service(s) that I offer or my website, please use the Feedback category. If you would like your feedback posted
+      on my website, please let me know and I will be happy to do so! The Membership category simply allows me to stay in touch with you on a recurring basis, but also, only Members get my competitive commission rates!</span>
+  </div>
 </div>
 {% endblock %}
