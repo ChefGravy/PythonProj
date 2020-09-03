@@ -2,7 +2,7 @@
 """
 Created on Mon Mar 30 21:50:36 2020
 
-@author: ao378d
+@author: ruslan polyak
 """
 import sqlite3
 
