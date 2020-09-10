@@ -8,9 +8,8 @@ Created on Thu Mar  5 09:28:51 2020
 import sqlite3
 
 def connect():
-    conn = sqlite3.connect(r"C:\Users\PepperRodney\Documents\Python\lite.db")
+    conn = sqlite3.connect("lite.db")
     cur=conn.cursor()
-    cur.execute("DROP TABLE elfy")
     cur.execute("CREATE TABLE IF NOT EXISTS elfy ('id' INTEGER PRIMARY KEY, \
                                                   'prog_title' TEXT,\
                                                   'analyst' TEXT,\
