@@ -10,8 +10,6 @@ import tkinterSQL_be
 #because the outcome is a tuple, we'll need to create a function
 #for readability
 
-#tkinterSQL_be.connect()
-
 def view_command():
     #ensures you're deleting everything from 0 to END
     list1.delete(0,END)
@@ -26,9 +24,12 @@ def search_command():
         list1.insert(END,search)
     
 def add_command():
-    tkinterSQL_be.insert(prog_title.get(),analyst.get(),notes.get(),pid_aid.get())
-    list1.delete(0, END)
-    list1.insert(END,(prog_title.get(),analyst.get(),notes.get(),pid_aid.get()))
+    try:
+        tkinterSQL_be.insert(prog_title.get(),analyst.get(),notes.get(),pid_aid.get())
+        list1.delete(0, END)
+        list1.insert(END,(prog_title.get(),analyst.get(),notes.get(),pid_aid.get()))
+    except:
+        tkinterSQL_be.connect()
     
 #bind function expects an event. this will give us an id which we can then pass to 
 #delete command
