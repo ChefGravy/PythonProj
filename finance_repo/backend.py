@@ -25,7 +25,6 @@ def view():
                 ELF0.[BC Ratio], ELF0.[Benefit Type], ELF0.[Benefit Owner], ELF0.[Date Completed], \
                 ELF_data.Year, ELF_data.Type, ELF_data.Value \
                 FROM ELF_data, ELF0 WHERE ELF_data.pk0=ELF0.pk0")
-    #Iteration, [Project/Program Type],[Project/Program Title],[Business Unit],[Program Name],Status,[Request ID],[Due Date],[Primary Estimator],Notes  FROM ELF1 GROUP BY Iteration, [Project/Program Type],[Project/Program Title],[Business Unit],[Program Name],Status,[Request ID],[Due Date],[Primary Estimator], Notes 
     rows = cur.fetchall()
     conn.close()
     return rows
@@ -154,7 +153,7 @@ def update_ELF(primary_key_pk0, primary_key_pk_data,cost_year,cost_value,benefit
     tk.messagebox.showinfo(title='Excellent!', message='You updated {} row(s)'.format(cur.rowcount))
     cur.close()
     conn.close()
-#------------------------INSERT--------------------------------------     
+ 
 def insert_ELF(benefit_year,benefit_value,typo,cost_year,cost_value,iteration="", project_program_type="", project_program_title="", project_program_description="",
                 business_unit="", program_name="", status="", portfolio_alignment="", customer="", request_id="", 
                 notes="", last_update_date="", last_update_user="", receipt_request_date="", due_date="", 
