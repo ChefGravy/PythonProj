@@ -5,18 +5,16 @@ Created on Tue Mar 10 09:23:37 2020
 @author: Ruslan Polyak
 """
 
-from tkinter import (Tk, Label, Entry, StringVar, W, IntVar, CENTER, Button, Toplevel, Listbox, Scrollbar, END, Text,
-                     DoubleVar, RIGHT, Y, LEFT, BOTH, INSERT, BOTTOM, WORD, OptionMenu, EXTENDED, SUNKEN, simpledialog,
-                     LabelFrame, GROOVE)
+from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import simpledialog
 from tkinter import filedialog
 from datetime import date
 import backend
 import pandas as pd
 import sqlite3
 import os
-import sys
 import getpass
 
 window = Tk()
@@ -67,6 +65,7 @@ def view_all():
             global primary_key_pk_data
             #foreign key
             primary_key_pk_data = selected_tuple[0]
+            print(primary_key_pk_data)
             global primary_key_pk0
             #primary key
             primary_key_pk0 = selected_tuple[1]
@@ -329,15 +328,15 @@ def find_command():
     try:
         root = tk.Tk()
         scrollbar = tk.Scrollbar(root, orient="vertical")
-        global lbtn_mass_update
-        lbtn_mass_update = tk.Listbox(root, width=200, height=20, yscrollcommand=scrollbar.set, selectmode=EXTENDED, relief=SUNKEN)
-        scrollbar.config(command=lbtn_mass_update.yview)
+        global find_btn
+        find_btn = tk.Listbox(root, width=200, height=20, yscrollcommand=scrollbar.set, selectmode=EXTENDED, relief=SUNKEN)
+        scrollbar.config(command=find_btn.yview)
 
         scrollbar.pack(side="right", fill="y")
-        lbtn_mass_update.pack(side="left", fill="both", expand=True)
-        lbtn_mass_update.delete(0, END)
+        find_btn.pack(side="left", fill="both", expand=True)
+        find_btn.delete(0, END)
         for search in backend.search(iteration.get(), request_id.get(), primary_est.get(), tkvar_s.get()):
-            lbtn_mass_update.insert(END, " {} ".format(search))
+            find_btn.insert(END, " {} ".format(search))
     except Exception as e:
         print(str(e))
         tk.messagebox.showerror(title='Oooooops!',
@@ -348,25 +347,25 @@ def find_command():
 def help_command():
     root = tk.Tk()
     scrollbar = tk.Scrollbar(root, orient="vertical")
-    lbtn_mass_update = tk.Listbox(root, width=200, height=20, yscrollcommand=scrollbar.set, selectmode=EXTENDED, relief=SUNKEN)
-    scrollbar.config(command=lbtn_mass_update.yview)
+    help_btn = tk.Listbox(root, width=200, height=20, yscrollcommand=scrollbar.set, selectmode=EXTENDED, relief=SUNKEN)
+    scrollbar.config(command=help_btn.yview)
     scrollbar.pack(side="right", fill="y")
-    lbtn_mass_update.pack(side="left", fill="both", expand=True)
-    lbtn_mass_update.insert(END, '{}'.format("Welcome. As question arise, I will continue to add the answers here."))
-    lbtn_mass_update.insert(END, '{}'.format(""))
-    lbtn_mass_update.insert(END, '{}'.format(
+    help_btn.pack(side="left", fill="both", expand=True)
+    help_btn.insert(END, '{}'.format("Welcome. As question arise, I will continue to add the answers here."))
+    help_btn.insert(END, '{}'.format(""))
+    help_btn.insert(END, '{}'.format(
         "0) This .db is time down. This means when looking at all records through View All, you will see multiple rows, one for every year."))
-    lbtn_mass_update.insert(END, '{}'.format(""))
-    lbtn_mass_update.insert(END, '{}'.format(
+    help_btn.insert(END, '{}'.format(""))
+    help_btn.insert(END, '{}'.format(
         "1) Search function will not work unless you enter Primary Analyst's name, Request #, Status, and Iteration. Look for the asterix next to the entry windows."))
-    lbtn_mass_update.insert(END, '{}'.format(""))
-    lbtn_mass_update.insert(END, '{}'.format(
+    help_btn.insert(END, '{}'.format(""))
+    help_btn.insert(END, '{}'.format(
         "2) When making new entries, make sure to finish by clicking New Entry before Viewing All. If you select a record in the View All window, it will overwrite your current entries in the entry windows."))
-    lbtn_mass_update.insert(END, '{}'.format(""))
-    lbtn_mass_update.insert(END, '{}'.format("3) You can export everything in this .db into Excel for ease of use"))
-    lbtn_mass_update.insert(END, '{}'.format(""))
-    lbtn_mass_update.insert(END, '{}'.format("4) You can mass update everything in this .db from Excel for ease of use. To do so, please keep the format of the exported file or else you will experience errors."))
-    lbtn_mass_update.insert(END, '{}'.format(""))
+    help_btn.insert(END, '{}'.format(""))
+    help_btn.insert(END, '{}'.format("3) You can export everything in this .db into Excel for ease of use"))
+    help_btn.insert(END, '{}'.format(""))
+    help_btn.insert(END, '{}'.format("4) You can mass update everything in this .db from Excel for ease of use. To do so, please keep the format of the exported file or else you will experience errors."))
+    help_btn.insert(END, '{}'.format(""))
 
 
 def clear():
@@ -448,7 +447,7 @@ def new_entry():
                          'year7': benefit_7.get(), 'year8': benefit_8.get(), 'year9': benefit_9.get(),
                          'year10': benefit_10.get()}
 
-        typo = {'typiteration_ver': "Cost", 'type2': "Benefit"}
+        typo = {'type1': "Cost", 'type2': "Benefit"}
         fields_entry = {'Iteration': iteration_ver.get(), 'Project Type': tkvar_pt.get(), 'Project Title': prog_title.get(),
                         'Project Description': prog_desc.get(), 'Business Unit': tkvar_bu.get(),
                         'Program Name': tkvar_pn.get(), 'Status': tkvar_s.get(), 'Request Id': req_id.get(),
@@ -485,7 +484,7 @@ def new_entry():
 
 
 def update_command():
-    # try:
+     try:
         # entry window for year (not used)
         year_c = {'year1': yr_1_cost.get(), 'year2': yr_2_cost.get(), 'year3': yr_3_cost.get(), 'year4': yr_4_cost.get(), 'year5': yr_5_cost.get(),
                   'year6': yr_6_cost.get(), 'year7': yr_7_cost.get(), 'year8': yr_8_cost.get(), 'year9': yr_9_cost.get(), 'year10': yr_10_cost.get()}
@@ -518,6 +517,7 @@ def update_command():
                          'bene10': benefit_10.get()}
         ## typo: cost or benefit type
         typo = {'type1': "Cost", 'type2': "Benefit"}
+        # fields_entry: dictionary used to determine empty fields during update
         fields_entry = {'Iteration': iteration_ver.get(), 'Project Type': tkvar_pt.get(), 'Project Title': prog_title.get(),
                         'Project Description': prog_desc.get(), 'Business Unit': tkvar_bu.get(),
                         'Program Name': tkvar_pn.get(), 'Status': tkvar_s.get(), 'Request Id': req_id.get(),
@@ -539,7 +539,7 @@ def update_command():
                 counter += 1
                 empty_fields.append(key)
         # pass data to backend sql table
-        backend.update_ELF(primary_key_pk0, primary_key_pk_data, cost_year, cost_value, benefit_year, benefit_value,
+        backend.update_ELF(primary_key_pk0, cost_year, cost_value, benefit_year, benefit_value,
                            typo, iteration.get(), tkvar_pt.get(), proj_title.get(), proj_description.get(),
                            tkvar_bu.get(), tkvar_pn.get(), tkvar_s.get(), port_align.get(), customer.get(),
                            request_id.get(), usr_notes.get("1.0", END), last_update_date.get(), last_update_user.get(),
@@ -548,13 +548,13 @@ def update_command():
                            requester.get(), tech_focal.get(), finops_focal.get(), nr_estimate.get(), npv_mill.get(),
                            mirr.get(), pay_backdis.get(), bc_ratio.get(), benefit_type.get(), benefit_owner.get(),
                            date_comp.get())
-        #if success, display count and name of empty fields
+        # if success, display count and name of empty fields
         tk.messagebox.showinfo(title='Excellent!',
                                message='Update was a success!\nYou left {} field(s) empty.\n{}'.format(counter,
                                                                                                        empty_fields))
-    # except Exception as e:
-    #     print(str(e))
-    #     tk.messagebox.showerror(title='Oooooops!', message="Ooops, something went wrong: {}.".format(str(e)))
+     except Exception as e:
+         print(str(e))
+         tk.messagebox.showerror(title='Oooooops!', message="Ooops, something went wrong: {}.".format(str(e)))
 
 #delete from .db
 def delete_command():
@@ -581,14 +581,11 @@ lbl_iteration_ver = Label(window, text="Iteration*", width=21, anchor=W)
 lbl_iteration_ver.grid(row=1, column=0)
 iteration = IntVar()
 iteration_ver = Entry(window, textvariable=iteration, width=5)
-#iteration_ver.insert(INSERT, "")
 iteration_ver.grid(row=1, column=1)
 
 prj_type = Label(window, text="Project Type", width=21, anchor=W)
 prj_type.grid(row=2, column=0)
-# Create a Tkinter variable
 tkvar_pt = StringVar(window)
-# Dictionary with options
 choices = {'Business Case', 'Consultation'}
 popupMenu = OptionMenu(window, tkvar_pt, *choices)
 popupMenu.grid(row=2, column=1)
@@ -607,32 +604,23 @@ prog_desc.grid(row=4, column=1)
 
 lbl_bu = Label(window, text="Business Unit", width=21, anchor=W)
 lbl_bu.grid(row=5, column=0)
-# Create a Tkinter variable
 tkvar_bu = StringVar(window)
-# Dictionary with options
 choices = {'Choice 1', 'Choice 2', 'Choice 3', 'Choice 4'}
 popupMenu = OptionMenu(window, tkvar_bu, *choices)
-# Label(window, text="Choose a dish").grid(row = 1, column = 1)
 popupMenu.grid(row=5, column=1)
 
 lbl_prog_name = Label(window, text="Program Name", width=21, anchor=W)
 lbl_prog_name.grid(row=6, column=0)
-# Create a Tkinter variable
 tkvar_pn = StringVar(window)
-# Dictionary with options
 choices = {'Label 1', 'Label 2', 'Label 3', 'Label 4'}
-# tkvar_pn.set('Program Name') # set the default option
 popupMenu = OptionMenu(window, tkvar_pn, *choices)
 popupMenu.grid(row=6, column=1)
 
 lbl_stat = Label(window, text="Status*", width=21, anchor=W)
 lbl_stat.grid(row=7, column=0)
 status = StringVar()
-# Create a Tkinter variable
 tkvar_s = StringVar(window)
-# Dictionary with options
 choices = {'Active', 'Complete', 'Cancelled'}
-# tkvar_s.set('Status') # set the default option
 popupMenu = OptionMenu(window, tkvar_s, *choices)
 popupMenu.grid(row=7, column=1)
 
@@ -818,7 +806,7 @@ sec_analyst.grid(row=4, column=5)
 cost_lbl_yr = Label(window, text="Cost Years", width=21, anchor=CENTER)
 cost_lbl_yr.grid(row=21, column=0)
 
-cost_lbl_amt = Label(window, text="Cost ($)", width=21, anchor=CENTER)
+cost_lbl_amt = Label(window, text="Cost ($M)", width=21, anchor=CENTER)
 cost_lbl_amt.grid(row=21, column=1)
 
 year_1 = IntVar()
