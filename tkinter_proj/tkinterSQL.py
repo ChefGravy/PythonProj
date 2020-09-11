@@ -2,7 +2,7 @@
 """
 Created on Wed Mar  4 14:38:45 2020
 
-@author: Pepper Rodney
+@author: Pepper
 """
 
 from tkinter import Label, Tk, Entry, StringVar, W, Listbox, Scrollbar, Button, END
