@@ -50,8 +50,12 @@ def view_all():
         lb.pack(side="top", fill='both', expand=True)
         lb.delete(0, END)
 
-        for row in backend.view():
-            lb.insert(END, row)
+        # convert to a string before the interpreter does it
+        # item = [str(data) for data in backend.view()]
+        # for x in item:
+        #     lb.insert(END, "".join(x))
+        for item in backend.view():
+            lb.insert(END, "{}".format(item))
 
 
         def get_selected_row(event):
