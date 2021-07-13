@@ -2,7 +2,7 @@
 """
 Created on Tue Sep 22 20:05:45 2020
 
-@author: Ruslan Polyak
+@author: pepper rodney
 """
 # -*- coding: utf-8 -*-
 
